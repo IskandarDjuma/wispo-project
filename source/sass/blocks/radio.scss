@@ -1,0 +1,95 @@
+.radio {
+  @include above($tablet-width) {
+    border: 1px solid $basic-grey200;
+    padding: 30px 32px;
+  }
+
+  @include above($desktop-width) {
+    padding: 32px 26px;
+  }
+}
+
+.radio__list {
+  @include list-reset;
+}
+
+.radio__label {
+  padding-left: 45px;
+
+  @include font-size (16px, 18px, 400);
+  font-family: $primary-text;
+  color: $special-dark-grey2;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  @include above($tablet-width) {
+    @include font-size (20px, 30px, 400);
+    padding-left: 56px;
+  }
+
+  @include above($desktop-width) {
+    padding-left: 60px;
+  }
+}
+
+.radio__item {
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: -6px;
+  }
+
+  @include above($tablet-width) {
+    margin-bottom: 23px;
+  }
+
+  @include above($desktop-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.radio__input + .radio__label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $special-grey;
+  border-radius: 50%;
+
+  @include above($tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+.radio__input:checked + .radio__label::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  width: 13px;
+  height: 13px;
+  background-color: $basic-green;
+  border-radius: 50%;
+
+  @include above($tablet-width) {
+    top: 11px;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.radio__input:hover + .radio__label::before,
+.radio__input:focus + .radio__label::before {
+  border: 1px solid $basic-grey300;
+}
+
+.radio__input:focus-visible + .radio__label::before {
+  outline: 5px auto -webkit-focus-ring-color;
+}

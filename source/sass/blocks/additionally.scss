@@ -1,0 +1,160 @@
+.additionally {
+  position: relative;
+}
+
+.additionally__wrap {
+  margin-bottom: 35px;
+
+  @include above($tablet-width) {
+    margin-bottom: 70px;
+  }
+
+  @include above($desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 245px;
+    column-gap: 80px;
+    margin-bottom: 90px;
+  }
+}
+
+.additionally__title {
+  display: inline-block;
+  vertical-align: top;
+
+  @include font-size (24px, 24px, 400);
+  font-family: $primary-text;
+  color: $basic-black;
+  padding-right: 22px;
+  margin-bottom: 49px;
+  margin-top: 10px;
+
+  @include above($tablet-width) {
+    @include font-size (36px, 36px, 400);
+    margin-bottom: 80px;
+    padding-left: 75px;
+  }
+
+  @include above($desktop-width) {
+    padding-left: 39px;
+  }
+}
+
+.additionally__list {
+  @include list-reset;
+  margin-bottom: 40px;
+
+  @include above($tablet-width) {
+    margin-bottom: 80px;
+  }
+
+  @include above($desktop-width) {
+    margin: 0;
+  }
+}
+
+.additionally__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $special-grey;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include above($tablet-width) {
+    padding-top: 28px;
+    padding-left: 38px;
+    padding-bottom: 21px;
+    padding-right: 38px;
+    border: 1px solid $special-grey;
+    margin-bottom: 0;
+
+    &:first-child {
+      padding-top: 25px;
+    }
+  }
+
+  @include above($desktop-width) {
+    padding: 15px 0;
+    border: none;
+    border-bottom: 1px solid $special-grey;
+
+    &:first-child {
+      border-top: 1px solid $special-grey;
+      padding-top: 15px;
+    }
+  }
+}
+
+.additionally__caption {
+  @include font-size (16px, 16px, 400);
+  font-family: $primary-text;
+  color: $special-dark-grey2;
+  margin: 0;
+  margin-bottom: 13px;
+  width: 100%;
+  text-transform: uppercase;
+
+  @include above($tablet-width) {
+    @include font-size (20px, 20px, 400);
+    width: max-content;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  @include above($desktop-width) {
+    margin: 0;
+  }
+}
+
+.additionally__text {
+  @include font-size (14px, 14px, 400);
+  color: $special-dark-grey;
+  margin: 0;
+  margin-bottom: 15px;
+
+  @include above($tablet-width) {
+    @include font-size (16px, 20px, 400);
+    margin-right: 50px;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  @include above($desktop-width) {
+    padding-top: 5px;
+
+    &--size {
+      margin-left: auto;
+      width: 195px;
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    &--price {
+      min-width: 45px;
+    }
+  }
+}
+
+.additionally__button {
+  @include font-size (16px, 20px, 400);
+  width: 100%;
+
+  @include above($tablet-width) {
+    margin-top: 27px;
+    padding: 10px 35px;
+  }
+
+  @include above($desktop-width) {
+    width: 244px;
+    margin: 0;
+    margin-left: 38px;
+  }
+}

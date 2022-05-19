@@ -1,0 +1,32 @@
+.card-content {
+  @include font-size (12px, 16px, 400);
+  margin: 0;
+  color: $special-dark-grey;
+
+  @include above($tablet-width) {
+    @include font-size (16px, 16px, 400);
+  }
+}
+
+.card-content__stats {
+  display: flex;
+  justify-content: space-between;
+
+  @include above($tablet-width) {
+    margin-bottom: 11px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $special-grey;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @include above($desktop-width) {
+    margin-bottom: 10px;
+  }
+}
+
+.card-content__definition {
+  margin: 0;
+}

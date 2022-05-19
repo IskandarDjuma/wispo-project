@@ -1,0 +1,89 @@
+.checkbox {
+  @include list-reset;
+
+  @include above($tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 56px;
+  }
+
+  @include above($desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+  }
+}
+
+.checkbox__label {
+  @include font-size (16px, 18px, 400);
+  font-family: $primary-text;
+  color: $basic-black;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  @include above($tablet-width) {
+    @include font-size (20px, 30px, 400);
+    padding-left: 14px;
+    padding-top: 7px;
+  }
+}
+
+.checkbox__input + .checkbox__label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -45px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid $special-grey;
+
+  @include above($tablet-width) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.checkbox__input:checked + .checkbox__label::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -38px;
+  width: 18px;
+  height: 14px;
+  background-image: url("../img/checked-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  @include above($tablet-width) {
+    top: 12px;
+    left: -33px;
+  }
+}
+
+.checkbox__input:hover + .checkbox__label::before,
+.checkbox__input:focus + .checkbox__label::before {
+  border: 1px solid $basic-grey300;
+}
+
+.checkbox__input:focus-visible + .checkbox__label::before {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+
+.checkbox__item {
+  margin-bottom: 18px;
+  padding-left: 45px;
+
+  &:last-child {
+    margin-bottom: 20px;
+  }
+
+  @include above($tablet-width) {
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

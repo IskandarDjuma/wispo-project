@@ -1,0 +1,108 @@
+.promo {
+  background-color: $basic-white;
+  background-image: url("../img/mobile-bg-cat@1x.jpg"), linear-gradient(to bottom, $basic-green100 59.8%, transparent 59.8%, transparent 100%);
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding: 27px 0 22px;
+  position: relative;
+
+  @include retina () {
+    background-image: url("../img/mobile-bg-cat@2x.jpg"), linear-gradient(to bottom, $basic-green100 60.8%, transparent 60.8%, transparent 100%);
+    background-size: 320px auto, auto;
+  }
+
+  @include above ($tablet-width) {
+    position: relative;
+    background: none;
+    padding: 0 0 526px;
+  }
+
+  @include above ($desktop-width) {
+    padding: 0 0 266px;
+  }
+}
+
+.promo__wrapper {
+  @include above ($tablet-width) {
+    padding-left: 117px;
+  }
+
+  @include above ($desktop-width) {
+    padding-left: 111px;
+  }
+}
+
+.promo__headline {
+  @include font-size (36px, 36px, 400);
+  font-family: $primary-text;
+  color: $basic-white;
+  margin: 0;
+  margin-bottom: 25px;
+  text-align: center;
+
+  @include above ($tablet-width) {
+    @include font-size (60px, 60px, 400);
+    color: $basic-black;
+    max-width: 501px;
+    text-align: left;
+    margin-bottom: 40px;
+    padding-top: 21px;
+  }
+}
+
+.promo__subtitle {
+  @include font-size (14px, 14px, 400);
+  font-family: $primary-text;
+  text-transform: uppercase;
+  color: $basic-white;
+  margin: 0;
+  margin-bottom: 27px;
+  text-align: center;
+
+  @include above ($tablet-width) {
+    @include font-size (20px, 20px, 400);
+    color: $basic-black;
+    margin-bottom: 49px;
+    text-align: left;
+  }
+
+  @include above ($desktop-width) {
+    margin-bottom: 52px;
+  }
+}
+
+.promo__img {
+  @include above ($tablet-width) {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 709;
+    height: 609px;
+    z-index: -1;
+  }
+
+  @include above ($desktop-width) {
+    left: 58%;
+    bottom: auto;
+    top: -62px;
+    width: 552px;
+    height: 499px;
+    transform: translateX(-50%);
+  }
+}
+
+.promo__button {
+  width: 100%;
+
+  @include above ($tablet-width) {
+    width: max-content;
+    margin-top: auto;
+    margin-left: -5px;
+  }
+
+  @include above ($desktop-width) {
+    @include font-size (20px, 20px, 400);
+    margin-left: 0;
+  }
+}

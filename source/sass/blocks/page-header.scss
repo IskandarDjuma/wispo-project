@@ -1,0 +1,121 @@
+.page-header {
+  padding-top: 24px;
+  min-height: 66px;
+
+  @include above ($tablet-width) {
+    padding-bottom: 31px;
+
+    &--index {
+      padding-top: 24px;
+      padding-bottom: 37px;
+    }
+  }
+
+  @include above ($desktop-width) {
+    position: relative;
+    padding-top: 54px;
+    padding-bottom: 107px;
+
+    &--index {
+      padding-top: 51px;
+      padding-bottom: 87px;
+    }
+
+    &--inner {
+      padding-top: 53px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &--index::before {
+    @include above ($desktop-width) {
+      content: "";
+      position: absolute;
+      width: calc(100% / 2);
+      height: 694px;
+      top: 0;
+      right: 0;
+      background-color: $basic-green200;
+      background-image: url("../img/mobile-bg-cat@1x.jpg");
+      background-size: contain, 100%;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      z-index: -1;
+
+      @include retina () {
+        background-image: url("../img/mobile-bg-cat@2x.jpg"), linear-gradient(to bottom, $basic-green100 60.8%, transparent 60.8%, transparent 100%);
+      }
+    }
+  }
+}
+
+.page-header__wrapper {
+  @include above ($tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.page-header__wrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 8px;
+
+  @include above ($tablet-width) {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+.page-header__toggle {
+  position: relative;
+  width: 24px;
+  height: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $basic-black;
+  }
+
+  &--open {
+    border-top: 2px solid $basic-black;
+    border-bottom: 2px solid $basic-black;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  &--close {
+    &::before {
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: "";
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--nojs {
+    display: none;
+  }
+
+  @include above ($tablet-width) {
+    display: none;
+  }
+}

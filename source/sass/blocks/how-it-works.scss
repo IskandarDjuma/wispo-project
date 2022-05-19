@@ -1,0 +1,171 @@
+.how-it-works {
+  position: relative;
+  padding: 2px 0 44px;
+
+  &::before {
+    @include above($tablet-width) {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 1px;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      background-color: $basic-light-grey;
+    }
+
+    @include above($desktop-width) {
+      display: none;
+    }
+  }
+
+  @include above($tablet-width) {
+    padding-bottom: 45px;
+  }
+
+  @include above($desktop-width) {
+    padding-bottom: 70px;
+  }
+}
+
+.how-it-works__title {
+  @include font-size (36px, 40px, 400);
+  font-family: $primary-text;
+  color: $basic-black;
+  margin: 0;
+  padding-bottom: 38px;
+
+  @include above($tablet-width) {
+    @include font-size (60px, 60px, 400);
+    padding-bottom: 37px;
+  }
+
+  @include above($desktop-width) {
+    padding-bottom: 35px;
+  }
+}
+
+.how-it-works__list {
+  @include list-reset;
+  counter-reset: numbers;
+
+  @include above($tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;
+    padding: 0;
+  }
+
+  @include above($desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 80px;
+  }
+}
+
+.how-it-works__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: $basic-green;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+  }
+
+  &--useful {
+    &::before {
+      background-image: url("../img/icon_leaf.svg");
+    }
+  }
+
+  &--powder {
+    &::before {
+      background-image: url("../img/icon_tub.svg");
+    }
+  }
+
+  &--replacement {
+    &::before {
+      background-image: url("../img/icon_eat.svg");
+    }
+  }
+
+  &--changes {
+    &::before {
+      background-image: url("../img/icon_alarm.svg");
+    }
+  }
+
+  @include above($tablet-width) {
+    flex-direction: column;
+    counter-increment: numbers;
+    margin-bottom: 0;
+
+    &::before {
+      margin-right: auto;
+      margin-top: 11%;
+      width: 80px;
+      height: 80px;
+      background-size: 30px 50px;
+    }
+
+    &::after {
+      content: counter(numbers);
+      position: absolute;
+      top: 0;
+      left: 120px;
+      z-index: -1;
+      font-size: 280px;
+      line-height: 280px;
+      font-family: $primary-text;
+      vertical-align: top;
+      color: $basic-grey;
+
+      @include font-size (280px, 280px, 400);
+    }
+  }
+
+  @include above($desktop-width) {
+    &::before {
+      margin-top: 15%;
+    }
+  }
+}
+
+.how-it-works__description {
+  @include font-size (14px, 18px, 400);
+  margin: 0;
+
+  @include above($tablet-width) {
+    @include font-size (16px, 24px, 400);
+    padding-top: 32px;
+    padding-right: 65px;
+    padding-bottom: 57px;
+
+    span {
+      display: block;
+    }
+  }
+
+  @include above($desktop-width) {
+    padding-right: 0;
+    padding-top: 31px;
+  }
+}

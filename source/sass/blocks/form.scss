@@ -1,0 +1,269 @@
+.form {
+  @include above($desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "name program"
+      "contacts contacts"
+      "comments comments"
+      "extra extra";
+    gap: 0 80px;
+  }
+}
+
+.form__list {
+  @include list-reset;
+}
+
+.form__label {
+  @include font-size (16px, 18px, 400);
+  font-family: $primary-text;
+  text-transform: uppercase;
+  align-self: center;
+  flex: 0 0 auto;
+  margin-right: 11px;
+
+  @include above($tablet-width) {
+    @include font-size (20px, 30px, 400);
+    margin-right: 18px;
+  }
+
+  @include above($desktop-width) {
+    @include font-size (20px, 30px, 400);
+    margin-right: 20px;
+  }
+}
+
+.form__group {
+  padding: 0;
+  margin: 0;
+  border: none;
+  margin-bottom: 30px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--name {
+    @include above($tablet-width) {
+      margin-bottom: 81px;
+    }
+
+    @include above($desktop-width) {
+      grid-area: name;
+      margin-bottom: 0;
+    }
+  }
+
+  &--program {
+    padding: 28px 0;
+    margin-bottom: 26px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 1px;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      background-color: $basic-light-grey;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    @include above($tablet-width) {
+      margin-bottom: 75px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    @include above($desktop-width) {
+      grid-area: program;
+      margin-bottom: 72px;
+    }
+  }
+
+  &--contacts {
+    @include above($tablet-width) {
+      margin-bottom: 74px;
+    }
+
+    @include above($desktop-width) {
+      grid-area: contacts;
+      margin-bottom: 65px;
+    }
+  }
+
+  &--comments {
+    margin-bottom: 17px;
+
+    @include above($tablet-width) {
+      margin-bottom: 63px;
+    }
+
+    @include above($desktop-width) {
+      grid-area: comments;
+      margin-bottom: 65px;
+    }
+  }
+
+  &--extra {
+    margin-bottom: 20px;
+
+    @include above($tablet-width) {
+      margin-bottom: 58px;
+
+      .form__legend {
+        margin-bottom: 61px;
+      }
+    }
+
+    @include above($desktop-width) {
+      grid-area: extra;
+      margin-bottom: 65px;
+
+      .form__legend {
+        margin-bottom: 62px;
+      }
+    }
+  }
+}
+
+.form__field {
+  margin-bottom: 14px;
+  display: flex;
+
+  &:last-child {
+    margin-bottom: -9px;
+  }
+
+  @include above($tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.form__input {
+  width: 100%;
+
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+}
+
+.form__legend {
+  @include font-size (24px, 26px, 400);
+
+  font-family: $primary-text;
+  color: $basic-black;
+  padding: 0;
+  padding-right: 22px;
+  margin-bottom: 37px;
+
+  @include above($tablet-width) {
+    @include font-size (36px, 36px, 400);
+    margin-bottom: 76px;
+  }
+
+  span {
+    display: block;
+
+    @include above($tablet-width) {
+      display: inline;
+    }
+  }
+}
+
+.form__row {
+  position: relative;
+
+  @include above($desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    .form__field {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form__field--icon {
+  position: relative;
+
+  .form__input {
+    flex-grow: 1;
+  }
+}
+
+.form__required {
+  @include font-size (14px, 16px, 400);
+  color: $basic-black;
+  text-align: center;
+  margin-top: 22px;
+
+  @include above($tablet-width) {
+    @include font-size (16px, 16px, 400);
+    margin-top: 13px;
+  }
+}
+
+.form__field-icon {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  transform: translate(100%, -50%);
+  fill: none;
+
+  @include above($tablet-width) {
+    &--mail {
+      width: 18px;
+      height: 13px;
+    }
+
+    &--phone {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.form__submit {
+  @include above($tablet-width) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include above($desktop-width) {
+    grid-column: 1/-1;
+  }
+}
+
+.form__button {
+  width: 100%;
+
+  @include above($tablet-width) {
+    width: 282px;
+    margin-right: 62px;
+  }
+
+  @include above($desktop-width) {
+    margin-right: 82px;
+    width: 568px;
+  }
+}

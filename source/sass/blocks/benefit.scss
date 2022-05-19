@@ -1,0 +1,158 @@
+.benefit__title {
+  position: relative;
+
+  @include font-size (24px, 37px, 400);
+  font-family: $primary-text;
+  color: $basic-black;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-left: 70px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: auto;
+    left: auto;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+
+  &--slim {
+    &::before {
+      background-image: url("../img/cat-slim.svg");
+      width: 50px;
+      height: 53px;
+      top: -8px;
+      left: 2px;
+
+      @include above($tablet-width) {
+        left: 394px;
+        top: auto;
+        width: 200px;
+        height: 211px;
+      }
+
+      @include above($desktop-width) {
+        left: 0;
+        top: -36px;
+        width: 100px;
+        height: 106px;
+      }
+    }
+  }
+
+  &--gain {
+    &::before {
+      background-image: url("../img/cat-gain.svg");
+      width: 67px;
+      height: 50px;
+      left: -7px;
+      top: -6px;
+
+      @include above($tablet-width) {
+        left: 360px;
+        top: 19px;
+        width: 268px;
+        height: 200px;
+      }
+
+      @include above($desktop-width) {
+        left: -21px;
+        top: -30px;
+        width: 134px;
+        height: 100px;
+      }
+    }
+  }
+
+  @include above($tablet-width) {
+    @include font-size (36px, 36px, 400);
+    text-align: left;
+    margin-bottom: 26px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  @include above($desktop-width) {
+    margin-bottom: 73px;
+    padding-left: 163px;
+  }
+}
+
+.benefit__description {
+  @include font-size (14px, 18px, 400);
+  margin: 0;
+  margin-bottom: 17px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid $basic-light-grey;
+
+  @include above($tablet-width) {
+    @include font-size (16px, 24px, 400);
+    padding-bottom: 0;
+    border: none;
+    margin-bottom: 52px;
+    max-width: 380px;
+
+    &--gain {
+      max-width: 340px;
+    }
+  }
+
+  @include above($desktop-width) {
+    margin-bottom: 27px;
+    max-width: 467px;
+  }
+}
+
+.benefit__btn {
+  @include font-size (16px, 16px, 400);
+  font-family: $primary-text;
+  text-transform: uppercase;
+  color: $basic-black;
+  position: relative;
+  transition: 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: 24px;
+    height: 16px;
+    background-image: url("../img/arrow-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover,
+  &:focus {
+    padding-right: 58px;
+
+    &::before {
+      width: 32px;
+      background-image: url("../img/icon-arrow-long.svg");
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @include above($tablet-width) {
+    @include font-size (20px, 30px, 400);
+
+    &::before {
+      left: 128px;
+      top: 6px;
+    }
+  }
+
+  @include above($desktop-width) {
+    &::before {
+      left: 135px;
+    }
+  }
+}
