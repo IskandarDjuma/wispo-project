@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
 const sourcemap = require("gulp-sourcemaps");
-const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const csso = require("postcss-csso");
@@ -177,12 +177,11 @@ exports.default = gulp.series(
   clean,
   copy,
   copyImages,
-  gulp.parallel (
+  gulp.series (
     styles,
     html,
     scripts,
-    sprite,
-    createWebp
+    sprite
   ),
   gulp.series (
     server,

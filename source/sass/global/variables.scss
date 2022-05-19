@@ -1,38 +1,22 @@
 // Fonts
-$primary-text: "Oswald", "Arial", sans-serif;
+$primary-text: "Montserrat", "Arial", sans-serif;
 $secondary-text: "Arial", sans-serif;
 
 // Color
-$basic-green: #68b738;
-$basic-green100:#62a53a;
-$basic-green200:#64a73c;
-$basic-grey: #f2f2f2;
-$basic-grey300: #bababa;
-$basic-grey200: #e7e7e7;
-$basic-grey100: #e6e6e6;
-$basic-light-grey: #d9d9d9;
-$special-dark-grey: #444444;
-$special-grey2: #ebebeb;
-$special-grey: #cdcdcd;
-$special-grey4: #dcdcdc;
-$special-grey3: #666666;
-$special-grey-bg: #eaeaea;
-$special-dark-grey2: #222222;
-$status-error: #ff8282;
-$basic-green2: #5eaa2f;
+$basic-yellow: #ffcc00;
 $basic-black: #000000;
-$basic-black100: #111111;
 $basic-white: #ffffff;
 $transparent: rgba($basic-black, 0);
 
-$accent-color: $basic-green;
-$primary-text-color: $special-dark-grey;
+$accent-color: $basic-yellow;
+$primary-text-color: $basic-black;
+
 
 // Viewports
-
-$tablet-width: 768px;
-$desktop-width: 1280px;
-$mobile-width-only: 767px;
+$mobile-width: 767px;
+$tablet-width: 1023px;
+$desktop-width: 1366px;
+$desktop-width-max: 1920px;
 
 //Retina
 
